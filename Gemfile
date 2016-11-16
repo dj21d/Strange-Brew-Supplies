@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
