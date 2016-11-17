@@ -17,15 +17,23 @@
             <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Ingredients</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Equipment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Kits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recipes</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
             <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-              <%= render @static_pages %>
+              <% @static_pages.each do |static_page| %>
+                  <a class="dropdown-item" href="/<%= static_page.title.tr(" ","_")%>"><%= static_page.title%></a>
+              <% end %>
             </div>
           </li>
         </ul>
