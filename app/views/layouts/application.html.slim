@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Strange Brew Supplies
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container
+      nav.navbar.navbar-light.bg-faded
+        a.navbar-brand href="/"  Strange Brew Supplies
+        ul.nav.navbar-nav
+          li.nav-item
+            a.nav-link href="#"
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link href="#"  Ingredients
+          li.nav-item
+            a.nav-link href="#"  Equipment
+          li.nav-item
+            a.nav-link href="#"  Kits
+          li.nav-item
+            a.nav-link href="#"  Recipes
+          li.nav-item.dropdown
+            a#supportedContentDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="http://example.com"  Information
+            .dropdown-menu aria-labelledby="supportedContentDropdown"
+              - @static_pages.each do |static_page|
+                - page_link = static_page.title.tr(" ","_")
+                a.dropdown-item href="/#{page_link}" = static_page.title
+        form.form-inline.float-xs-right
+          input.form-control placeholder="Search" type="text" /
+          button.btn.btn-outline-success type="submit"  Search
+      = yield

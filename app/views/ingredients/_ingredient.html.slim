@@ -1,0 +1,6 @@
+.ingredient
+  = image_tag "ingredients/" + ingredient.image
+  h4= ingredient.name
+  p
+    strong= format("$%.2f",ingredient.price)
+    | / #{ingredient.measurement.name}
