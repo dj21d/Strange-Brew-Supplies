@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root :to => 'welcome#index'
 
+  get 'ingredients/:id' => 'ingredients#show', as: 'ingredient', id: /\d+/
+
   get 'static_pages/show'
 
   get 'ingredients', to: 'ingredients#index'

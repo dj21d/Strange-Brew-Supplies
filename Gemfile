@@ -32,6 +32,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem "slim-rails"
+gem "paperclip", "~> 5.0.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,11 +1,16 @@
 div class="ingredient col-md-3 col-sm-6"
   .card style="height:450px"
-    = image_tag("ingredients/" + ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
+    a href="ingredients/#{ingredient.id}"
+      = image_tag("ingredients/" + ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
     .card-block
-      h3 class="card-block item-title" style=""
+      a class="h3 card-block item-title" href="ingredients/#{ingredient.id}"
         | #{ingredient.name}
       p class="card-text item-sale"
+       -if ingredient.on_sale?
+         strong style="color:green"
+           | #{format("$%.2f",ingredient.sale_price)}
+           | / #{ingredient.measurement.name}
       p class="card-text item-price"
         strong= format("$%.2f",ingredient.price)
         | / #{ingredient.measurement.name}
-        a style="margin-left:5px" href="#" class="btn btn-secondary" Details
+        a style="margin-left:5px" href="ingredients/#{ingredient.id}" class="btn btn-secondary" Details

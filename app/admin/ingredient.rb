@@ -12,6 +12,6 @@ ActiveAdmin.register Ingredient do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  permit_params :name, :price, :image, :ingredient_type_id, :measurement_id
+  permit_params :name, :price, :image, :ingredient_type_id, :measurement_id, :on_sale, :sale_price, :package_size, :description
 
 end
