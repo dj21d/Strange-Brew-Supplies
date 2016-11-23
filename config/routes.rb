@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  get 'index', to: 'welcome#index'
+
+  root :to => 'welcome#index'
+
   get 'static_pages/show'
 
-  get 'ingredients/index'
+  get 'ingredients', to: 'ingredients#index'
+
+  get 'equipment', to: 'equipment#index'
+
+  get 'kits', to: 'kits#index'
+
+  get 'recipes', to: 'recipes#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

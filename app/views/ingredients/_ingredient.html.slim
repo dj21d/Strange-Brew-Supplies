@@ -1,6 +1,11 @@
-.ingredient
-  = image_tag "ingredients/" + ingredient.image
-  h4= ingredient.name
-  p
-    strong= format("$%.2f",ingredient.price)
-    | / #{ingredient.measurement.name}
+div class="ingredient col-md-3 col-sm-6"
+  .card style="height:450px"
+    = image_tag("ingredients/" + ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
+    .card-block
+      h3 class="card-block item-title" style=""
+        | #{ingredient.name}
+      p class="card-text item-sale"
+      p class="card-text item-price"
+        strong= format("$%.2f",ingredient.price)
+        | / #{ingredient.measurement.name}
+        a style="margin-left:5px" href="#" class="btn btn-secondary" Details

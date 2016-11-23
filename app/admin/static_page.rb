@@ -1,4 +1,4 @@
-ActiveAdmin.register StaticPage do
+ActiveAdmin.register StaticPage, as: "Information Page" do
   form do |f|
     f.inputs do
       f.input :title
