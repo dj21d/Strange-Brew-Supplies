@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'customers/new'
-
+  resource :customers, only: [:new, :create, :update, :destroy]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
