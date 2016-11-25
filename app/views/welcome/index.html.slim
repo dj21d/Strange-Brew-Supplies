@@ -1,2 +1,39 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+h1 On Sale Items
+div class="row text-md-center"
+  - @on_sale_ingredients.each do |ingredient|
+    -if ingredient.on_sale?
+      div class="ingredient col-md-3 col-sm-6"
+        .card style="height:450px"
+          a href="ingredients/#{ingredient.id}"
+            = image_tag("ingredients/" + ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
+          .card-block
+            a class="h3 card-block item-title" href="ingredients/#{ingredient.id}"
+              | #{ingredient.name}
+            p class="card-text item-sale"
+              span style="text-decoration: line-through;" = format("$%.2f",ingredient.price)
+              strong style="color:green"
+                  | #{format("$%.2f",ingredient.sale_price)}
+                  | / #{ingredient.measurement.name}
+              a style="margin-left:5px" href="ingredients/#{ingredient.id}" class="btn btn-secondary" Details
+
+
+h1 New Items
+div class="row text-md-center"
+  - @new_items.each do |ingredient|
+    - if ingredient.on_sale?
+      div class="ingredient col-md-3 col-sm-6"
+        .card style="height:450px"
+          a href="ingredients/#{ingredient.id}"
+            = image_tag("ingredients/" + ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
+          .card-block
+            a class="h3 card-block item-title" href="ingredients/#{ingredient.id}"
+              | #{ingredient.name}
+            p class="card-text item-sale"
+              - if ingredient.on_sale?
+                strong style="color:green"
+                  | #{format("$%.2f",ingredient.sale_price)}
+                  | / #{ingredient.measurement.name}
+            p class="card-text item-price"
+              strong= format("$%.2f",ingredient.price)
+              | / #{ingredient.measurement.name}
+              a style="margin-left:5px" href="ingredients/#{ingredient.id}" class="btn btn-secondary" Details
