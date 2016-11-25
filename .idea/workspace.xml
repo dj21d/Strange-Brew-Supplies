@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55db637a-7fe1-4175-8471-37f8ef51bdd5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20161125090515_add_columns_to_customers.rb" afterPath="$PROJECT_DIR$/db/migrate/20161125090515_add_columns_to_customers.rb" />
-    </list>
+    <list default="true" id="55db637a-7fe1-4175-8471-37f8ef51bdd5" name="Default" comment="" />
     <ignored path="StrangeBrewSupplies.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -37,11 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20161125090515_add_columns_to_customers.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="20161125090515_add_columns_to_customers.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20161125090515_add_columns_to_customers.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20161125090758_remove_columns_from_order.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20161125090758_remove_columns_from_order.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -71,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
+              <caret line="143" column="22" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -115,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/static_pages/_static_pages.html.erb" />
@@ -166,6 +173,7 @@
         <option value="$PROJECT_DIR$/app/models/order.rb" />
         <option value="$PROJECT_DIR$/app/admin/order.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20161125090515_add_columns_to_customers.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20161125090758_remove_columns_from_order.rb" />
       </list>
     </option>
   </component>
@@ -488,12 +496,12 @@
       <workItem from="1479358543278" duration="552000" />
       <workItem from="1479359155273" duration="5231000" />
       <workItem from="1479868757638" duration="16243000" />
-      <workItem from="1480052113772" duration="12610000" />
+      <workItem from="1480052113772" duration="12736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46211000" />
+    <option name="totallyTimeSpent" value="46337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -534,14 +542,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20161116085958_create_ingredient_types.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20161116074111_create_ingredients.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -888,7 +888,7 @@
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
+          <caret line="143" column="22" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -937,6 +937,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20161125090758_remove_columns_from_order.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
           <folding />
         </state>
       </provider>
