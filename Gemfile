@@ -34,7 +34,7 @@ gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem "slim-rails"
 gem "paperclip", "~> 5.0.0"
 gem 'country_select'
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

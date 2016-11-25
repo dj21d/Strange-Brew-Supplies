@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resource :customers, only: [:new, :create, :update, :destroy]
+  get 'customers/new'
+
+  get 'signup'  => 'customers#new'
+
+  get 'login' => "sessions#new"
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
+  resource :customers
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 

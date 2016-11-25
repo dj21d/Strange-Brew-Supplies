@@ -1,0 +1,9 @@
+.login
+  .container
+    .form
+      h1 Sign up
+      = form_for(@customer) do |f|
+        = f.text_field :full_name, :placeholder => "Full name"
+        = f.email_field :email, :placeholder => "Email"
+        = f.password_field :password, :placeholder => "Password"
+        = f.submit "Create an account", class: "btn-submit"
