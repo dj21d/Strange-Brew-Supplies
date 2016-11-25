@@ -16,6 +16,7 @@ class OrderItem < ApplicationRecord
         ingredient.sale_price
       else
         ingredient.price
+      end
     end
   end
 
@@ -40,5 +41,4 @@ class OrderItem < ApplicationRecord
     self[:unit_price] = unit_price
     self[:total_price] = quantity * self[:unit_price]
   end
-end
 end

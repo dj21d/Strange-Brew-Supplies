@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'customers/new'
+
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
@@ -13,6 +15,12 @@ Rails.application.routes.draw do
   get 'ingredients', to: 'ingredients#index'
 
   get 'recipes', to: 'recipes#index'
+
+  get '/equipment', :to => redirect('/Under_Construction')
+
+  get '/kits', :to => redirect('/Under_Construction')
+
+  get '/recipes', :to => redirect('/Under_Construction')
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :customer
-  has_one :shipping_address, :class_name => "cust_address"
-  has_one :billing_address, :class_name => "cust_address"
+  belongs_to :shipping_address, :class_name => "CustAddress"
+  belongs_to :billing_address, :class_name => "CustAddress"
   belongs_to :order_status
   has_many :order_items
 
@@ -11,6 +11,7 @@ class Order < ApplicationRecord
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
+
   private
   def set_order_status
     self.order_status_id = 1
@@ -19,4 +20,6 @@ class Order < ApplicationRecord
   def update_subtotal
     self[:subtotal] = subtotal
   end
+
+
 end
