@@ -1,6 +1,6 @@
 h1 On Sale Items
 div class="row text-md-center"
-  - @on_sale_ingredients.each do |ingredient|
+  - @ingredients.each do |ingredient|
     -if ingredient.on_sale?
       div class="ingredient col-md-3 col-sm-6"
         .card style="height:450px"
@@ -19,8 +19,8 @@ div class="row text-md-center"
 
 h1 New Items
 div class="row text-md-center"
-  - @new_items.each do |ingredient|
-    - if ingredient.on_sale?
+  - @ingredients.each do |ingredient|
+    - if ingredient.created_at > 5.days.ago
       div class="ingredient col-md-3 col-sm-6"
         .card style="height:450px"
           a href="ingredients/#{ingredient.id}"
