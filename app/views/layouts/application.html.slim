@@ -8,6 +8,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .container
+      h1.cart-text =render 'layouts/cart_text'
       nav.navbar.navbar-light.bg-faded
         a.navbar-brand href="/"  Strange Brew Supplies
         ul.nav.navbar-nav
@@ -26,7 +27,7 @@ html
             a#supportedContentDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="http://example.com"  Information
             .dropdown-menu aria-labelledby="supportedContentDropdown"
               - @static_pages.each do |static_page|
-                - if static_page.title != "Not Found"
+                - if static_page.display_in_nav
                   - page_link = static_page.title.tr(" ","_")
                   a.dropdown-item href="/#{page_link}" = static_page.title
         form.form-inline.float-xs-right

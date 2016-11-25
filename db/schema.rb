@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123071636) do
+ActiveRecord::Schema.define(version: 20161125061709) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -91,6 +91,10 @@ ActiveRecord::Schema.define(version: 20161123071636) do
     t.float    "sale_price"
     t.decimal  "package_size"
     t.string   "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["ingredient_type_id"], name: "index_ingredients_on_ingredient_type_id"
     t.index ["measurement_id"], name: "index_ingredients_on_measurement_id"
   end
@@ -107,6 +111,18 @@ ActiveRecord::Schema.define(version: 20161123071636) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "ingredient_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.decimal  "total_price"
+    t.index ["ingredient_id"], name: "index_order_items_on_ingredient_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -154,8 +170,9 @@ ActiveRecord::Schema.define(version: 20161123071636) do
   create_table "static_pages", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.boolean  "display_in_nav"
   end
 
 end

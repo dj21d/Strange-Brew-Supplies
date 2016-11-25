@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
   get 'index', to: 'welcome#index'
 
   root :to => 'welcome#index'
@@ -8,10 +11,6 @@ Rails.application.routes.draw do
   get 'static_pages/show'
 
   get 'ingredients', to: 'ingredients#index'
-
-  get 'equipment', to: 'equipment#index'
-
-  get 'kits', to: 'kits#index'
 
   get 'recipes', to: 'recipes#index'
 
