@@ -26,6 +26,7 @@ class CustomersController < ApplicationController
 
   def show
     @current_customer ||= Customer.find(session[:customer_id]) if session[:customer_id]
+    @customer_addresses = CustAddress.where(customer_id: current_customer.id)
   end
 
   private

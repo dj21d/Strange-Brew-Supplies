@@ -1,5 +1,18 @@
 h1 #{current_customer.full_name}'s Account Page
 h5 Email
 p #{current_customer.email}
-=link_to "Update Account","/myaccount/edit"
-=link_to "Add Address","add_address"
+=link_to "Update Account","/myaccount/edit", class: "btn btn-inverse"
+=link_to "Add Address","/myaccount/add_address", class: "btn btn-inverse"
+div.row
+  -@customer_addresses.each do |address|
+    div class="ingredient col-md-3 col-sm-6"
+      div class="card card-block"
+        p.card-title =address.full_name
+        p.card-text =address.street_address
+        p.card-text #{address.city}, #{address.province.name}
+        p.card-text =address.postal_code
+        p.card-text =address.phone_number
+        =link_to "Update","/myaccount/edit_address/#{address.id}", class: "btn btn-primary", style: "margin-right:5px"
+        =link_to "Delete","/myaccount/delete_address/#{address.id}", class: "btn btn-danger"
+
+
