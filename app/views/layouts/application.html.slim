@@ -12,7 +12,7 @@ html
         li.nav-item
           p.cart-text =render 'layouts/cart_text'
         - if current_customer
-          li.nav-item = current_customer.email
+          li.nav-item = link_to current_customer.email, '/myaccount'
           li.nav-item = link_to "Log out", logout_path, method: "delete"
         - else
           li.nav-item = link_to "Login", 'login'
