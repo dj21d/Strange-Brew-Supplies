@@ -7,10 +7,12 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
-  resources :customers, only: [:create]
+  resources :customers, only: [:create, :edit, :update]
 
   get "/myaccount", to: 'customers#show'
-  get "/myaccount/update", to: 'customers#update'
+
+  get "/myaccount/edit", to: 'customers#edit'
+  post "/myaccount/edit", to: 'customers#update'
 
   get '/index', to: 'welcome#index'
 
