@@ -5,8 +5,7 @@ class SessionsController < ApplicationController
       session[:customer_id] = @customer.id
       redirect_to '/'
     else
-      flash[:notice] = "Login Unsuccessful"
-      redirect_to 'login'
+      redirect_to 'login', :flash => { :error => "Incorrect Email or Password" }
     end
   end
   def new

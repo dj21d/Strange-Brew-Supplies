@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201085311) do
+ActiveRecord::Schema.define(version: 20161204001610) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -92,10 +92,6 @@ ActiveRecord::Schema.define(version: 20161201085311) do
     t.float    "sale_price"
     t.decimal  "package_size"
     t.string   "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.index ["ingredient_type_id"], name: "index_ingredients_on_ingredient_type_id"
     t.index ["measurement_id"], name: "index_ingredients_on_measurement_id"
   end

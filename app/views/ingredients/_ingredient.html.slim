@@ -1,7 +1,7 @@
 div class="ingredient col-md-3 col-sm-6"
   .card style="height:450px"
     a href="ingredients/#{ingredient.id}"
-      = image_tag("ingredients/" + ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
+      = image_tag(ingredient.image, :class => "card-img-top img-fluid", :style => "max-height:250px")
     .card-block
       a class="h3 card-block item-title" href="ingredients/#{ingredient.id}"
         | #{ingredient.name}
