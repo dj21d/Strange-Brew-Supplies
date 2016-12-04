@@ -66,14 +66,6 @@ ActiveRecord::Schema.define(version: 20161204001610) do
     t.string   "password_digest"
   end
 
-  create_table "equipment", force: :cascade do |t|
-    t.string   "name"
-    t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
   create_table "ingredient_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -94,14 +86,6 @@ ActiveRecord::Schema.define(version: 20161204001610) do
     t.string   "description"
     t.index ["ingredient_type_id"], name: "index_ingredients_on_ingredient_type_id"
     t.index ["measurement_id"], name: "index_ingredients_on_measurement_id"
-  end
-
-  create_table "kits", force: :cascade do |t|
-    t.string   "name"
-    t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
   end
 
   create_table "measurements", force: :cascade do |t|
