@@ -19,7 +19,7 @@ h1 Add Address
     =collection_select(:cust_address, :province_id, Province.all, :id, :name, {}, {class: "form-control"})
   div.form-group
     = f.label :country
-    = f.country_select :country, {only:["CA","US"]}, {class: "form-control"}
+    = f.country_select :country, {only:["CA"]}, {class: "form-control"}
   div.form-group
     = f.label :postal_code
     = f.text_field :postal_code, :class => "form-control"
