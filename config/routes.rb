@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/ingredients/:id' => 'ingredients#show', as: 'ingredient', id: /\d+/
   get '/ingredients', to: 'ingredients#index'
 
+  get '/search', to: 'ingredients#search'
+
   get '/equipment', :to => redirect('/Under_Construction')
   get '/kits', :to => redirect('/Under_Construction')
   get '/recipes', :to => redirect('/Under_Construction')

@@ -38,7 +38,7 @@ html
                 - if static_page.display_in_nav
                   - page_link = static_page.title.tr(" ","_")
                   a.dropdown-item href="/#{page_link}" = static_page.title
-        form.form-inline.float-xs-right
-          input.form-control placeholder="Search" type="text" /
-          button.btn.btn-outline-success type="submit"  Search
+        = form_tag("/search", :method => "get", id: "search-form", class: "form form-inline float-xs-right") do
+          =text_field_tag :search, params[:search], placeholder: "Search", class: "form-control"
+          = submit_tag "Search", :name => nil, class: "button btn btn-outline-success"
       = yield
