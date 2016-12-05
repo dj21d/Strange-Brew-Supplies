@@ -1,0 +1,28 @@
+.col-xs-8
+  .well
+    .row
+  -@order_items.each do |order_item|
+    .row
+      .col-xs-6
+        h4 = order_item.ingredient.name
+      .col-xs-1
+        p =order_item.quantity.to_i
+      .col-xs-1
+        p X
+      .col-xs-1
+        p.text-right =number_to_currency order_item.unit_price
+      .col-xs-3
+        p.text-right =number_to_currency order_item.total_price
+.col-xs-4
+  p
+    strong Subtotal:
+    | #{@order.subtotal}
+  p
+    strong Shipping:
+    | $5.00
+  p
+    strong Taxes:
+    | #{number_to_currency @order.tax}
+  p
+    strong Total:
+    | #{number_to_currency @order.total}

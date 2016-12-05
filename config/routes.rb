@@ -27,6 +27,9 @@ Rails.application.routes.draw do
 
   get '/search', to: 'ingredients#search'
 
+  get '/checkout', to: 'orders#checkout'
+  post '/checkout', to: 'orders#invoice'
+
   get '/equipment', :to => redirect('/Under_Construction')
   get '/kits', :to => redirect('/Under_Construction')
   get '/recipes', :to => redirect('/Under_Construction')

@@ -29,11 +29,11 @@ div class="row text-md-center"
             a class="h3 card-block item-title" href="ingredients/#{ingredient.id}"
               | #{ingredient.name}
             p class="card-text item-sale"
+              span class="card-text item-price"
+                strong= format("$%.2f",ingredient.price)
               - if ingredient.on_sale?
                 strong style="color:green"
                   | #{format("$%.2f",ingredient.sale_price)}
-                  | / #{ingredient.measurement.name}
-            p class="card-text item-price"
-              strong= format("$%.2f",ingredient.price)
+                  style .item-price{text-decoration: line-through;}
               | / #{ingredient.measurement.name}
-              a style="margin-left:5px" href="ingredients/#{ingredient.id}" class="btn btn-secondary" Details
+            a style="margin-left:5px" href="ingredients/#{ingredient.id}" class="btn btn-secondary" Details

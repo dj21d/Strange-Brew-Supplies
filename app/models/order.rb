@@ -7,12 +7,13 @@ class Order < ApplicationRecord
 
   before_create :set_order_status
   before_save :update_subtotal
+  before_save :checkout
 
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
-  private
+
   def set_order_status
     self.order_status_id = 1
   end
@@ -21,5 +22,12 @@ class Order < ApplicationRecord
     self[:subtotal] = subtotal
   end
 
+  def checkout
+    if self.order_status_id == 2
+      self[:tax] = subtotal * self.billing_address.province.tax_rate
+      self[:shipping] = 5
+      self[:total] = self.subtotal + self.tax + self.shipping
+    end
+  end
 
 end

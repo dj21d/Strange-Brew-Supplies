@@ -1,0 +1,22 @@
+h1 =@customer.full_name
+
+p Choose your shipping and billing address
+= form_for(:order) do |f|
+  div class="form-group"
+    = f.label :shipping_address_id
+    =collection_select(:order, :shipping_address_id, CustAddress.all, :id, :street_address, {}, {class: "form-control"})
+  div class="form-group"
+    = f.label :billing_address_id
+    =collection_select(:order, :billing_address_id, CustAddress.all, :id, :street_address, {}, {class: "form-control"})
+  div class="form-group"
+    = f.hidden_field :customer_id, value: @customer.id
+    = f.hidden_field :order_status_id, value: 2
+    = f.submit "Place Order", class: "btn btn-primary"
+
+
+javascript:
+  $(function(){
+    $('#order_shipping_address_id').on('change', function(){
+      alert('do soemthing ' + $(this).val());
+    });
+  });

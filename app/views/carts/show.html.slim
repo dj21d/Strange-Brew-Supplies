@@ -1,2 +1,4 @@
 .shopping_cart
   =render "shopping_cart"
+-if @order_items.size != 0
+  =link_to "Checkout", '/checkout', class: "button btn btn-success"
